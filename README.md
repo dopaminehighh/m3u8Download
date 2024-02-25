@@ -10,6 +10,8 @@ This Python program is designed to download and merge TS (MPEG transport stream)
 
 - **Track Downloaded URLs**: The program keeps track of the downloaded URLs to avoid re-downloading the same files in subsequent runs.
 
+- **Track Merged Files**: Keep track of which packs of .ts files have been merged.
+
 ## Usage
 
 1. **Installation**
@@ -30,7 +32,7 @@ This Python program is designed to download and merge TS (MPEG transport stream)
 
 3. **Configuration**
 
-   - Edit the FFmpeg path to your path, or make it a blank string ('') if is installed into the system
+   - Edit the FFmpeg path to your path, or make it a blank string `''` if it is installed into the system
 
    - Populate the `urls.txt` file with the URLs of the TS files you want to download and merge.
 
@@ -39,7 +41,7 @@ This Python program is designed to download and merge TS (MPEG transport stream)
    - Run the program using Python:
 
      ```
-     python3 main.py
+     python main.py
      ```
 
    - The program will download the TS files from the URLs specified in `urls.txt`, merge them into a single video file, and store the merged file in the specified output directory.
