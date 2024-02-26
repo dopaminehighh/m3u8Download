@@ -1,4 +1,4 @@
-***REMOVED***
+import os
 import subprocess
 
 def merge_ts_files(input_dir, output_file, ffmpeg_path) -> None:
@@ -17,8 +17,8 @@ def merge_ts_files(input_dir, output_file, ffmpeg_path) -> None:
     # Clean up temporary files
     os.remove('input.txt')
 
-***REMOVED***
-***REMOVED***
+if __name__ == "__main__":
+    count = 1
     input_dir = "downloaded_ts_files/"
     output_file = "merged_video.mp4"
     ffmpeg_path = "ffmpeg-6.1-amd64-static/"
@@ -26,7 +26,7 @@ def merge_ts_files(input_dir, output_file, ffmpeg_path) -> None:
     while os.path.exists(input_dir + "%d" % count):
         input_dir_merge = input_dir + "%d" % count
         output_file_merge = output_file.replace("*", "%d" % count)
-***REMOVED***
+        count += 1
         with open("mergedVideos.txt", "r+") as merged:
             if output_file_merge in merged.read():
                 continue

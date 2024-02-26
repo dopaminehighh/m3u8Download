@@ -1,4 +1,4 @@
-***REMOVED***
+import os
 from dotenv import load_dotenv
 import downloadTsFiles
 import mergeTsFiles
@@ -18,7 +18,7 @@ def main():
         if url in downloaded.read():
             continue
         print("Extracting from", url, "\n")
-    ***REMOVED***
+        count = 1
         m3u8_file_url = url.strip()
         base_ts_url = "/".join(m3u8_file_url.split("/")[:-1]) + "/*"
         output_dir = os.getenv("OUTPUT_DIR")
@@ -32,7 +32,7 @@ def main():
         while os.path.exists(input_dir + "%d" % count):
             input_dir_merge = input_dir + "%d" % count
             output_file_merge = output_file.replace("*", "%d" % count)
-    ***REMOVED***
+            count += 1
             with open(os.getenv("MERGED_VIDEOS"), "r+") as merged:
                 if output_file_merge in merged.read():
                     continue
@@ -49,5 +49,5 @@ def main():
 
     downloaded.close()
 
-***REMOVED***
+if __name__ == "__main__":
     main()
