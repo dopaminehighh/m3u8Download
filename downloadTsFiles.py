@@ -35,9 +35,6 @@ def download_ts_files(count, m3u8_file_url, base_ts_url, output_dir) -> None:
         else:
             print(f"Failed to download {ts_file}")
 
-    if os.path.exists(output_dir + '/intro.ts'):
-        os.remove(output_dir + '/intro.ts')
-
 if __name__ == "__main__":
     count = 1
     m3u8_file_url = "LINK"
